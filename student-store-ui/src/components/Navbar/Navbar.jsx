@@ -11,9 +11,9 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="content">
           <div className="logo">
-            <Link to="/">
+            <a href="/">
               <img src={logo} alt="codepath logo" />
-            </Link>
+            </a>
           </div>
 
           <div className="socials">
@@ -24,16 +24,16 @@ export default function Navbar() {
 
             <ul className="links">
               <li>
-                <Link to="/">Home</Link>
+                <a href="#Home">Home</a>
               </li>
               <li>
-                <Link to="/#About">About Us</Link>
+                <a href="#About">About Us</a>
               </li>
               <li>
-                <Link to="/#Contact">Contact Us</Link>
+                <a href="#Buy">Buy Now</a>
               </li>
               <li>
-                <Link to="/#Buy">Buy Now</Link>
+                <a href="#Contact">Contact Us</a>
               </li>
             </ul>
       </div>

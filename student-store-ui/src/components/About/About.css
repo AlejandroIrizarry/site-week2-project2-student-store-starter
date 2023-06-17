@@ -53,3 +53,28 @@
     background: var(--dark-blue);
     height: 329px
 }
+
+
+.skills-icons {
+  transition-delay: calc(200ms * var(--order));
+}
+
+.float-area {
+  height: 30vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.floating-image img {
+  transform: translateY(-10%);
+  animation: floater 1.5s infinite;
+  transition: ease 0.5s;
+}
+
+
+@keyframes floater {
+  0%{transform: translateY(-10%);transition: ease 0.5s;}
+  50%{transform: translateY(10%);transition: ease 0.5s;}
+}

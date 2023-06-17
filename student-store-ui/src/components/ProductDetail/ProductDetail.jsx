@@ -14,6 +14,7 @@ const [loading, setLoading] = useState(true);
 useEffect(() => {
     axios.get(`https://codepath-store-api.herokuapp.com/store/${productId}`)
     .then((response) => {
+      console.log("!")
       setProduct(response.data.product)
       setLoading(false);
     })

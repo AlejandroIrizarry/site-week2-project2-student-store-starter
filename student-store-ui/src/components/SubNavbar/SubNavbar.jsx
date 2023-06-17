@@ -1,17 +1,29 @@
 
 import { Link } from "react-router-dom"
 import "./SubNavbar.css"
-import axios from "axios"
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
-export default function SubNavbar() {
+export default function SubNavbar({handleSearch, searchValue, activeCategory, setActiveCategory}) {
+
+    const [open, setOpen] = useState(true)
+
+    const categories = [
+        "All Categories",
+        "Clothing",
+        "Food",
+        "Accessories",
+        "Tech"
+    ]
+    
+
+    const toggleOpen = () => setOpen((isOpen) => setOpen(!isOpen))
 
     return (
         <nav className="sub-navbar">
             <div className="content">
                 <div className="row">
                     <div className="search-bar">
-                        <input type="text" name="search" placeholder="Search"  />
+                        <input type="text" name="search" placeholder="Search" value={searchValue} onChange={handleSearch}/>
 
                         <i className="material-icons">search</i>
                     </div>
@@ -28,11 +40,21 @@ export default function SubNavbar() {
                         </div>
                     </div>
                 </div>
+
                 <div className="row">
                     <div className="hamburger-menu">
-                        <i className="material-icons">menu</i>
+                        <i className="material-icons" onClick={() => toggleOpen()}>menu</i>
                     </div>
                 </div>
+
+                <ul className={`category-menu ${open ? `open` : `closed`}`}>
+            {categories.map((cat) => (
+              <li className={activeCategory === cat ? "is-active" : ""} key={cat}>
+                <button onClick={() => setActiveCategory(cat)}>{cat}</button>
+              </li>
+            ))}
+          </ul>
+
             </div>
         </nav>
     )

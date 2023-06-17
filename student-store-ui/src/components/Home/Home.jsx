@@ -8,14 +8,28 @@ import Contact from "../Contact/Contact"
 import Footer from "../Footer/Footer"
 import "./Home.css"
 
-export default function Home({products}) {
+
+export default function Home({products, searchValue, handleSearch, activeCategory, setActiveCategory}) {
+  
+const displayCategoryProducts = 
+activeCategory && 
+  activeCategory.toLowerCase() !== "all categories" ? 
+  products.filter((product) => {
+    return product.category === activeCategory.toLowerCase()
+}): products
+
+const displayProducts = 
+  products = displayCategoryProducts.filter((product) => {
+    return product.name.toLowerCase().includes(searchValue.toLowerCase())})
+
   return (
-    <div className="home">
+    <div className="home" id="Home">
       <Navbar />
       <Hero />
       <About />
-      <SubNavbar/>
-      <ProductGrid products={products} />
+      <SubNavbar handleSearch={handleSearch} searchValue={searchValue} 
+      activeCategory={activeCategory} setActiveCategory={setActiveCategory}/>
+      <ProductGrid products={displayProducts} />
       <Contact />
       <Footer />
     </div>
