@@ -47,6 +47,7 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 - [ ] Allow users to use an input to filter orders by the email of the person who placed the order.
 - [ ] Your choice! (Replace this bullet explaining what you implemented. Example: Users can create a wish list of products they are interested in but not yet ready to purchase.)
 
-FTL CodePath Student Store - Alejandro Irizarry - Watch Video
-
-
+<a href="https://www.loom.com/share/7e63f988443044608124e6d189aafbaf">
+    <p>FTL CodePath Student Store - Alejandro Irizarry - Watch Video</p>
+    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/7e63f988443044608124e6d189aafbaf-with-play.gif">
+  </a>
