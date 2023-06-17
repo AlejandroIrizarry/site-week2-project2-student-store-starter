@@ -49,5 +49,4 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 
 <div style="position: relative; padding-bottom: 62.5%; height: 0;"><iframe src="https://www.loom.com/embed/7e63f988443044608124e6d189aafbaf?sid=aca849e8-8d21-4873-b647-75805a7861bd" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
-FTL CodePath Student Store - Alejandro Irizarry - Watch Video
 
