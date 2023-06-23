@@ -96,10 +96,7 @@ export default function App() {
     let newCart = shoppingCart
       ?.map((item) => {
         if (item.id === product.id && item.quantity === 1) {
-          let removedElements = shoppingCart.splice(
-            shoppingCart.indexOf(item),
-            1
-          );
+          let removedElements = shoppingCart.splice(item.id, 1);
           console.log(`Removed item(s):`, removedElements);
           return null;
         } else if (item.id === product.id) {
