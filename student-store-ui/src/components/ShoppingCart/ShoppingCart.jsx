@@ -99,6 +99,8 @@ export default function ShoppingCart({
             checkoutForm={checkoutForm}
             handleOnCheckoutFormChange={handleOnCheckoutFormChange}
             handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
+            shoppingCart={shoppingCart}
+            subtotal={subtotal}
           />
         </div>
       )}

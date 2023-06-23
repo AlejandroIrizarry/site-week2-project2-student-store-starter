@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./CheckoutForm.css";
 
 export default function CheckoutForm({
@@ -7,7 +7,23 @@ export default function CheckoutForm({
   checkoutForm,
   handleOnCheckoutFormChange,
   handleOnSubmitCheckoutForm,
+  subtotal,
 }) {
+  const formatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  });
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [showReceipt, setShowReceipt] = useState("");
+
+  const handleCheckout = () => {
+    // Simulate sending a receipt to the provided email address
+    //sendReceipt(name, email);
+    // Show the receipt and thank you message
+    setShowReceipt(true);
+  };
+
   return (
     <>
       <div className="checkout-form">
@@ -27,6 +43,7 @@ export default function CheckoutForm({
               placeholder="Student Name"
               value={checkoutForm.name}
               onChange={handleOnCheckoutFormChange}
+              required
             />
           </div>
         </div>
@@ -40,6 +57,7 @@ export default function CheckoutForm({
               placeholder="student@codepath.org"
               value={checkoutForm.email}
               onChange={handleOnCheckoutFormChange}
+              required
             />
           </div>
         </div>
@@ -57,10 +75,7 @@ export default function CheckoutForm({
         <p className="is-danger"></p>
         <div className="field">
           <div className="control">
-            <button
-              className="button checkout-button"
-              onClick={handleOnSubmitCheckoutForm}
-            >
+            <button className="button checkout-button" onClick={handleCheckout}>
               Checkout
             </button>
           </div>
@@ -73,13 +88,43 @@ export default function CheckoutForm({
             <i className="material-icons md-48">fact_check</i>
           </span>
         </h3>
-        <div className="content">
-          <p>
-            A confirmation email will be sent to you so that you can confirm
-            this order. Once you have confirmed the order, it will be delivered
-            to your dorm room.
-          </p>
-        </div>
+        {!showReceipt ? (
+          <div className="content">
+            <p>
+              A confirmation email will be sent to you so that you can confirm
+              this order. Once you have confirmed the order, it will be
+              delivered to your dorm room.
+            </p>
+          </div>
+        ) : (
+          <div className="card">
+            <header className="card-head">
+              <h4 className="card-title">Receipt</h4>
+            </header>
+            <section className="class-body">
+              <p className="header">Showing receipt for</p>
+              <ul className="purchase">
+                {shoppingCart.map((product) => {
+                  return (
+                    <li>{`${product.quantity} total ${
+                      product.name
+                    } purchased at a cost of ${formatter.format(
+                      product.price
+                    )} for a total cost of ${formatter.format(
+                      product.price * product.quantity
+                    )} `}</li>
+                  );
+                })}
+                <li>{`Before taxes, the subtotal was ${formatter.format(
+                  subtotal
+                )}`}</li>
+                <li>{`After taxes and fees were applied, the total comes out to ${formatter.format(
+                  subtotal * 1.0875
+                )}`}</li>
+              </ul>
+            </section>
+          </div>
+        )}
       </div>
     </>
   );
