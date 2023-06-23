@@ -9,7 +9,7 @@ import Footer from "../Footer/Footer"
 import "./Home.css"
 
 
-export default function Home({products, searchValue, handleSearch, activeCategory, setActiveCategory}) {
+export default function Home({products, searchValue, handleSearch, activeCategory, setActiveCategory, handleAddItemToCart, handleRemoveItemFromCart, getQuantityOfItemInCart}) {
   
 const displayCategoryProducts = 
 activeCategory && 
@@ -27,9 +27,16 @@ const displayProducts =
       <Navbar />
       <Hero />
       <About />
-      <SubNavbar handleSearch={handleSearch} searchValue={searchValue} 
-      activeCategory={activeCategory} setActiveCategory={setActiveCategory}/>
-      <ProductGrid products={displayProducts} />
+      <SubNavbar handleSearch={handleSearch}
+       searchValue={searchValue} 
+       activeCategory={activeCategory}
+       setActiveCategory={setActiveCategory}
+       />
+      <ProductGrid products={displayProducts}
+       handleAddItemToCart={handleAddItemToCart}
+       handleRemoveItemFromCart={handleRemoveItemFromCart}
+       getQuantityOfItemInCart={getQuantityOfItemInCart}
+        />
       <Contact />
       <Footer />
     </div>

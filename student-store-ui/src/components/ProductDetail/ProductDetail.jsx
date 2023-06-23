@@ -5,7 +5,7 @@ import { useEffect, useState } from "react"
 import axios from "axios"
 import NotFound from "../NotFound/NotFound"
 
-export default function ProductDetail() {
+export default function ProductDetail(handleAddItemToCart, handleRemoveItemFromCart) {
 
 const [product, setProduct] = useState(null)
 const {productId} = useParams();
@@ -33,7 +33,7 @@ useEffect(() => {
     return (
         <div className="product-detail">
             {product ? (
-            <ProductView product={product} productId={productId} showDescription={true}/>
+            <ProductView product={product} productId={productId} showDescription={true} handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart={handleRemoveItemFromCart} />
             ) : <NotFound />}
         </div>
     )
