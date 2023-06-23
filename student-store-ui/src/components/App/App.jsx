@@ -93,17 +93,22 @@ export default function App() {
 
   // Event handler to remove items to cart
   const handleRemoveItemFromCart = (product) => {
-    let newCart = shoppingCart?.map((item) => {
-      if (item.id === product.id && item.quantity === 1) {
-        // return shoppingCart.filter((item) => item.id !== product.id);
-        // console.log("--here in the if statement---");
-        // shoppingCart.filter((item) => item.id !== product.id);
-      } else if (item.id === product.id) {
-        return { ...item, quantity: item.quantity - 1 };
-      } else {
-        return item;
-      }
-    });
+    let newCart = shoppingCart
+      ?.map((item) => {
+        if (item.id === product.id && item.quantity === 1) {
+          let removedElements = shoppingCart.splice(
+            shoppingCart.indexOf(item),
+            1
+          );
+          console.log(`Removed item(s):`, removedElements);
+          return null;
+        } else if (item.id === product.id) {
+          return { ...item, quantity: item.quantity - 1 };
+        } else {
+          return item;
+        }
+      })
+      .filter(Boolean);
     setShoppingCart(newCart);
   };
 
