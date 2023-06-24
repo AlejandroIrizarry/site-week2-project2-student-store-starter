@@ -15,7 +15,7 @@ export default function CheckoutForm({
   });
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [showReceipt, setShowReceipt] = useState("");
+  const [showReceipt, setShowReceipt] = useState(false);
 
   const handleCheckout = () => {
     // Simulate sending a receipt to the provided email address
