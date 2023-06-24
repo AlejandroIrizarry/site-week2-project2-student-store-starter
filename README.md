@@ -10,44 +10,54 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 - Add several products to the shopping cart.
 - Checkout and view the final receipt.
 
-## *Week 2* Application Features
+## _Week 2_ Application Features
 
 ### Core Features
 
-- [X] The website displays header, banner, search, product grid, about, contact, and footer section.
-- [X] The website displays the products at the [GET /store endpoint](https://codepath-store-api.herokuapp.com/store) on initial page load.
-- [X] Users can click on a category (clothing, food, etc.) to filter the product grid by type.
-- [X] Users can search for products.
-- [X] User can click on a product in the grid to navigate to a new page containing additional product details.
+- [x] The website displays header, banner, search, product grid, about, contact, and footer section.
+- [x] The website displays the products at the [GET /store endpoint](https://codepath-store-api.herokuapp.com/store) on initial page load.
+- [x] Users can click on a category (clothing, food, etc.) to filter the product grid by type.
+- [x] Users can search for products.
+- [x] User can click on a product in the grid to navigate to a new page containing additional product details.
 
 ### Stretch Features
 
 - [ ] Users can click to expand the shopping cart in the left navigation.
-- [X] Users can click the '+' button on a product cart to increment that product in the shopping cart.
-- [X] Users can click the '-' button on a product cart to decrement that product in the shopping cart.
+- [x] Users can click the '+' button on a product cart to increment that product in the shopping cart.
+- [x] Users can click the '-' button on a product cart to decrement that product in the shopping cart.
 - [ ] The shopping cart displays a table of products, quantities, subtotal, tax, and total.
-- [X] Added advanced CSS (floating giant codepath image)
-- [X] Make categories appear and dissapear when clicking hamburger button
-- [X] Added NotFound component that renders page when product does not exist.
+- [x] Added advanced CSS (floating giant codepath image)
+- [x] Make categories appear and dissapear when clicking hamburger button
+- [x] Added NotFound component that renders page when product does not exist.
 
-## *Week 3* Application Features
+## _Week 3_ Application Features
 
 ### Core Features
 
-- [ ] User can click to expand the shopping cart in the left navigation.
-- [ ] Users can click the '+' button on a product cart to increment that product in the shopping cart.
-- [ ] Users can click the '-' button on a product cart to decrement that product in the shopping cart. If the count is zero, the product should be removed from the cart.
-- [ ] The shopping cart displays a table of products, quantities, subtotal, tax, and total.
-- [ ] Users can checkout, and receive a receipt confirming their purchase.
+- [x] User can click to expand the shopping cart in the left navigation.
+- [x] Users can click the '+' button on a product cart to increment that product in the shopping cart.
+- [x] Users can click the '-' button on a product cart to decrement that product in the shopping cart. If the count is zero, the product should be removed from the cart.
+- [x] The shopping cart displays a table of products, quantities, subtotal, tax, and total.
+- [x] Users can checkout, and receive a receipt confirming their purchase.
 
 ### Stretch Features
 
 - [ ] Create an endpoint for fetching all orders in the database and an endpoint for serving an individual order based on its ID.
 - [ ] Build a page in the UI that displays the list of all past orders. The user should be able to click on any individual order to take them to a more detailed page of the transaction.
 - [ ] Allow users to use an input to filter orders by the email of the person who placed the order.
-- [ ] Your choice! (Replace this bullet explaining what you implemented. Example: Users can create a wish list of products they are interested in but not yet ready to purchase.)
+- [x] Added onchange event when typing email and name of person in the checkoutform. It changes the name and email while typing.
+- [x] CSS animation (floating logo)
+
+### Student Store Part 1:
 
 <a href="https://www.loom.com/share/7e63f988443044608124e6d189aafbaf">
     <p>FTL CodePath Student Store - Alejandro Irizarry - Watch Video</p>
     <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/7e63f988443044608124e6d189aafbaf-with-play.gif">
+  </a>
+
+### Student Store Part 2:
+
+<a href="https://www.loom.com/share/3e23512a3ace460788ea7b198b0f5941">
+    <p>Student Store - 23 June 2023 - Watch Video</p>
+    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/3e23512a3ace460788ea7b198b0f5941-with-play.gif">
   </a>
