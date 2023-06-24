@@ -41,8 +41,8 @@ export default function CheckoutForm({
               className="checkout-form-input"
               type="text"
               placeholder="Student Name"
-              value={checkoutForm.name}
-              onChange={handleOnCheckoutFormChange}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               required
             />
           </div>
@@ -55,8 +55,8 @@ export default function CheckoutForm({
               className="checkout-form-input"
               type="text"
               placeholder="student@codepath.org"
-              value={checkoutForm.email}
-              onChange={handleOnCheckoutFormChange}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
           </div>
@@ -102,7 +102,7 @@ export default function CheckoutForm({
               <h4 className="card-title">Receipt</h4>
             </header>
             <section className="class-body">
-              <p className="header">Showing receipt for</p>
+              <p className="header">{`Showing receipt for ${name} available at ${email}`}</p>
               <ul className="purchase">
                 {shoppingCart.map((product) => {
                   return (
