@@ -15,7 +15,7 @@ export default function ProductDetail({
 
   useEffect(() => {
     axios
-      .get(`https://codepath-store-api.herokuapp.com/store/${productId}`)
+      .get(`https://student-store-api.onrender.com/store/${productId}`)
       .then((response) => {
         console.log("!");
         setProduct(response.data.product);
