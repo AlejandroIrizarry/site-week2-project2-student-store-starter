@@ -127,7 +127,7 @@ export default function App() {
   // Fetches api products data
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/store`)
+      .get(`https://student-store-api.onrender.com/store`)
       .then((response) => {
         setProductList(response.data.products);
       })
